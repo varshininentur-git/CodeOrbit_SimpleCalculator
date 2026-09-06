@@ -1,0 +1,151 @@
+:root {
+    --ink: #17221b;
+    --muted: #66736a;
+    --paper: #fffdf8;
+    --background: #e8f0e8;
+    --accent: #d85d3f;
+    --accent-dark: #b7472f;
+    --line: #d8e0d7;
+    --success: #e3f2e4;
+    --danger: #fff0eb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 32px 18px;
+    color: var(--ink);
+    background: radial-gradient(circle at 12% 10%, #f8dfc7 0, transparent 30%),
+        linear-gradient(135deg, var(--background), #f3e9d9);
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+.calculator-card {
+    width: min(100%, 460px);
+    padding: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    background: rgba(255, 253, 248, 0.92);
+    box-shadow: 0 24px 70px rgba(52, 66, 53, 0.16);
+}
+
+.calculator-header {
+    margin-bottom: 30px;
+}
+
+.eyebrow,
+.result-label {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    line-height: 1.05;
+}
+
+.intro {
+    margin: 12px 0 0;
+    color: var(--muted);
+}
+
+.calculator-form {
+    display: grid;
+    gap: 19px;
+}
+
+.form-row {
+    display: grid;
+    gap: 8px;
+}
+
+label {
+    font-weight: 700;
+    font-size: 0.92rem;
+}
+
+input,
+select,
+button {
+    min-height: 50px;
+    border-radius: 11px;
+    font: inherit;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    background: #ffffff;
+}
+
+input:focus,
+select:focus {
+    outline: 3px solid rgba(216, 93, 63, 0.2);
+    border-color: var(--accent);
+}
+
+button {
+    margin-top: 5px;
+    border: 0;
+    color: #ffffff;
+    background: var(--accent);
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+.result,
+.error {
+    margin-top: 28px;
+    padding: 18px;
+    border-radius: 14px;
+}
+
+.result {
+    background: var(--success);
+}
+
+.result-value {
+    margin: 0;
+    overflow-wrap: anywhere;
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.error {
+    color: #9d3927;
+    background: var(--danger);
+}
+
+.error p {
+    margin: 0;
+    font-weight: 700;
+}
+
+@media (max-width: 480px) {
+    .calculator-card {
+        padding: 30px 22px;
+        border-radius: 18px;
+    }
+}
